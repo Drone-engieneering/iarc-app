@@ -26,14 +26,14 @@ export default function HomeScreen() {
     }
 
     // Voice listeners
-    Voice.onSpeechResults = (e: { value: string | any[]; }) => {
+    Voice.onSpeechResults = (e) => {
       if (e.value && e.value.length > 0) {
         setVoiceText(e.value[0]); // first recognized text
         console.log("Recognized text:", e.value[0]);
       }
     };
 
-    Voice.onSpeechError = (e: { error: any; }) => {
+    Voice.onSpeechError = (e) => {
       console.error("Speech error:", e.error);
     };
 
